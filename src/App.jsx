@@ -8,6 +8,22 @@ import Movies from "./components/Movies"
 import MyList from "./components/MyList"
 import RecentlyAdded from "./components/RecentlyAdded"
 
+import {
+  enable as enableDarkMode,
+  disable as disableDarkMode,
+  auto as followSystemColorScheme
+} from "darkreader"
+
+enableDarkMode({
+  brightness: 100,
+  contrast: 90,
+  sepia: 10
+})
+
+disableDarkMode()
+
+// followSystemColorScheme(false)
+
 function App() {
   return (
     <Router>
@@ -17,7 +33,7 @@ function App() {
         <Route path="/tvshows" element={<TvShows />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/mylist" element={<MyList />} />
-        <Route path="/RecentlyAdded" element={<RecentlyAdded />} />
+        <Route path="/recentlyadded" element={<RecentlyAdded />} />
       </Routes>
     </Router>
   )
